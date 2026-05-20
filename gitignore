@@ -18,3 +18,5 @@ __pycache__/
 Thumbs.db
 
 similarity.pkl
+Notebook/
+similarity.pkl
