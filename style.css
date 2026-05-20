@@ -1,0 +1,243 @@
+/* ═══════════════════════════════════════════════════
+   CineMatch – style.css
+   Cinema-dark theme with amber gold accents
+   ═══════════════════════════════════════════════════ */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap');*/
+
+:root {
+    --bg:        #0d0d0f;
+    --surface:   #16161a;
+    --border:    #2a2a30;
+    --gold:      #f5c842;
+    --gold-dim:  #c9a235;
+    --text:      #e8e8ec;
+    --muted:     #7a7a88;
+    --radius:    12px;
+}
+
+html, body, [data-testid="stAppViewContainer"],
+[data-testid="stApp"] {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+    font-family: 'Segoe UI', sans-serif;   /* system font, no network call */
+}
+
+/* ── Root variables ─────────────────────────────── */
+:root {
+    --bg:        #0d0d0f;
+    --surface:   #16161a;
+    --border:    #2a2a30;
+    --gold:      #f5c842;
+    --gold-dim:  #c9a235;
+    --text:      #e8e8ec;
+    --muted:     #7a7a88;
+    --radius:    12px;
+}
+
+/* ── Global reset ───────────────────────────────── */
+html, body, [data-testid="stAppViewContainer"],
+[data-testid="stApp"] {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+    font-family: 'DM Sans', sans-serif;
+}
+
+[data-testid="stHeader"],
+[data-testid="stToolbar"],
+[data-testid="stDecoration"] { display: none !important; }
+
+[data-testid="stAppViewContainer"] > section:first-child {
+    padding-top: 0 !important;
+}
+
+.block-container {
+    padding: 0 3rem 4rem !important;
+    max-width: 1280px !important;
+}
+
+/* ── Hero ───────────────────────────────────────── */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem 2.5rem;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    margin: 1.5rem auto 0;
+    border-radius: 2px;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold-dim);
+    padding: 4px 14px;
+    border-radius: 99px;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin: 0;
+    line-height: 1;
+}
+
+.hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin: 0.75rem 0 0;
+    font-weight: 300;
+}
+
+/* ── Selectbox ──────────────────────────────────── */
+[data-testid="stSelectbox"] label {
+    color: var(--muted) !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+}
+
+[data-testid="stSelectbox"] > div > div {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    color: var(--text) !important;
+    font-size: 1rem !important;
+    transition: border-color 0.2s;
+}
+
+[data-testid="stSelectbox"] > div > div:hover {
+    border-color: var(--gold) !important;
+}
+
+/* ── Button ─────────────────────────────────────── */
+[data-testid="stButton"] > button {
+    background: var(--gold) !important;
+    color: #0d0d0f !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 0.06em !important;
+    border: none !important;
+    border-radius: var(--radius) !important;
+    padding: 0.65rem 1.8rem !important;
+    cursor: pointer !important;
+    transition: background 0.2s, transform 0.15s !important;
+    margin-top: 0.6rem !important;
+    width: 100% !important;
+}
+
+[data-testid="stButton"] > button:hover {
+    background: var(--gold-dim) !important;
+    transform: translateY(-2px) !important;
+}
+
+[data-testid="stButton"] > button:active {
+    transform: translateY(0) !important;
+}
+
+/* ── Section label ──────────────────────────────── */
+.section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 2.5rem 0 1.2rem;
+    padding-left: 2px;
+}
+
+/* ── Movie card ─────────────────────────────────── */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold-dim);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+.card-img-wrap {
+    position: relative;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+}
+
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.card:hover .card-img-wrap img {
+    transform: scale(1.06);
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 13, 15, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.card:hover .card-overlay { opacity: 1; }
+
+.card-play {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #0d0d0f;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4px;
+}
+
+.card-title {
+    padding: 0.7rem 0.75rem 0.85rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Spinner ────────────────────────────────────── */
+[data-testid="stSpinner"] {
+    color: var(--gold) !important;
+}
+
+/* ── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
